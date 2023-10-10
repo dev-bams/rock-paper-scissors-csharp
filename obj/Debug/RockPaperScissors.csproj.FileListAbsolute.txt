@@ -1,0 +1,8 @@
+C:\Users\khale\OneDrive\Desktop\code\Projects\c#\RockPaperScissors\bin\Debug\RockPaperScissors.exe.config
+C:\Users\khale\OneDrive\Desktop\code\Projects\c#\RockPaperScissors\bin\Debug\RockPaperScissors.exe
+C:\Users\khale\OneDrive\Desktop\code\Projects\c#\RockPaperScissors\bin\Debug\RockPaperScissors.pdb
+C:\Users\khale\OneDrive\Desktop\code\Projects\c#\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.AssemblyReference.cache
+C:\Users\khale\OneDrive\Desktop\code\Projects\c#\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.SuggestedBindingRedirects.cache
+C:\Users\khale\OneDrive\Desktop\code\Projects\c#\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.CoreCompileInputs.cache
+C:\Users\khale\OneDrive\Desktop\code\Projects\c#\RockPaperScissors\obj\Debug\RockPaperScissors.exe
+C:\Users\khale\OneDrive\Desktop\code\Projects\c#\RockPaperScissors\obj\Debug\RockPaperScissors.pdb
