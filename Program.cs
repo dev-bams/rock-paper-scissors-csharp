@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
   internal class Program
   {
-    static int userScore = 0;
-    static int computerScore = 0;
+
     static void Main(string[] args)
     {
+      int playerScore = 0;
+      int computerScore = 0;
       Random random = new Random();
-      do
+      while (true)
       {
         string playerMove;
-        Console.WriteLine($"You: {userScore}\tComputer: {computerScore}");
-        do
+        Console.WriteLine($"You: {playerScore}\tComputer: {computerScore}");
+        while (true)
         {
           Console.Write("Enter your move: ");
           playerMove = Console.ReadLine().ToUpper();
@@ -27,17 +29,16 @@ namespace RockPaperScissors
             break;
           }
           Console.WriteLine("You can only enter: Rock(R), Paper(P) or Scissors(S). Try again :)");
-        } while (true);
-
+        };
 
         string computerMove = GetComputerMove(random.Next(3));
         string result = CompareMove(playerMove, computerMove);
-
-        Console.WriteLine(!ValidatePlayerMove(playerMove));
-
-
+        IncreaseScore(result, ref playerScore, ref computerScore);
         Console.WriteLine($"Computer played {computerMove} you played {playerMove}, you {result}");
-      } while (true);
+
+        Thread.Sleep(2000);
+        Console.Clear();
+      };
     }
     public static bool ValidatePlayerMove(string playerMove)
     {
@@ -79,6 +80,32 @@ namespace RockPaperScissors
       else if ((computerMove == rock && (playerMove == paper || playerMove == p)) || (computerMove == paper && (playerMove == scissors || playerMove == s)) || computerMove == scissors && (playerMove == rock || playerMove == r))
       {
         return Outcome.WIN.ToString();
+      }
+      else
+      {
+        return Outcome.DRAW.ToString();
+      }
+    }
+    public static void IncreaseScore(string result, ref int playerScore, ref int computerScore)
+    {
+      if (result == Outcome.WIN.ToString())
+      {
+        playerScore++;
+      }
+      else if (result == Outcome.LOSE.ToString())
+      {
+        computerScore++;
+      }
+    }
+    public static String GetFinalResult(int userScore, int computerScore)
+    {
+      if (userScore > computerScore)
+      {
+        return Outcome.WIN.ToString();
+      }
+      else if (userScore < computerScore)
+      {
+        return Outcome.LOSE.ToString();
       }
       else
       {
